@@ -10,6 +10,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &physical_layout0; // Diese Zeile hinzufügen!
     };
 
     default_transform: keymap_transform_0 {
@@ -44,5 +45,13 @@
             , <&gpio1 15 GPIO_ACTIVE_HIGH> // Pro Micro 19 -> P1.15
             , <&gpio1 13 GPIO_ACTIVE_HIGH> // Pro Micro 20 -> P1.13
             ;
+    };
+
+    /* ZMK Studio Physical Layout Definition */
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
     };
 };
