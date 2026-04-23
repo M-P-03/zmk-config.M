@@ -5,7 +5,6 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/physical_layouts.h>
 
 / {
     chosen {
@@ -48,27 +47,23 @@
             ;
     };
 
-    /* ZMK Studio Physical Layout Definition */
+    /* ZMK Studio Physical Layout Definition ohne Makros */
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&kscan0>;
 
-        /* Diese Keys-Definition ist zwingend für ZMK Studio */
+        /* Direkte Koordinaten (x y) für jede der 34 Tasten */
         keys
-            /* Reihe 0 */
-            = <&key_physical_attrs 0 0> , <&key_physical_attrs 0 100> , <&key_physical_attrs 0 200> , <&key_physical_attrs 0 300> , <&key_physical_attrs 0 400> 
-            , <&key_physical_attrs 0 600> , <&key_physical_attrs 0 700> , <&key_physical_attrs 0 800> , <&key_physical_attrs 0 900> , <&key_physical_attrs 0 1000>
-            /* Reihe 1 */
-            , <&key_physical_attrs 100 0> , <&key_physical_attrs 100 100> , <&key_physical_attrs 100 200> , <&key_physical_attrs 100 300> , <&key_physical_attrs 100 400> 
-            , <&key_physical_attrs 100 600> , <&key_physical_attrs 100 700> , <&key_physical_attrs 100 800> , <&key_physical_attrs 100 900> , <&key_physical_attrs 100 1000>
-            /* Reihe 2 */
-            , <&key_physical_attrs 200 0> , <&key_physical_attrs 200 100> , <&key_physical_attrs 200 200> , <&key_physical_attrs 200 300> , <&key_physical_attrs 200 400> 
-            , <&key_physical_attrs 200 600> , <&key_physical_attrs 200 700> , <&key_physical_attrs 200 800> , <&key_physical_attrs 200 900> , <&key_physical_attrs 200 1000>
-            /* Daumentasten (Reihe 3) */
-            , <&key_physical_attrs 300 300> , <&key_physical_attrs 300 400> 
-            , <&key_physical_attrs 300 600> , <&key_physical_attrs 300 700>
+            /* Reihe 0 (Top) */
+            = <0 0>, <0 100>, <0 200>, <0 300>, <0 400>,   <0 600>, <0 700>, <0 800>, <0 900>, <0 1000>
+            /* Reihe 1 (Mid) */
+            , <100 0>, <100 100>, <100 200>, <100 300>, <100 400>,   <100 600>, <100 700>, <100 800>, <100 900>, <100 1000>
+            /* Reihe 2 (Bottom) */
+            , <200 0>, <200 100>, <200 200>, <200 300>, <200 400>,   <200 600>, <200 700>, <200 800>, <200 900>, <200 1000>
+            /* Reihe 3 (Thumbs) */
+            , <300 300>, <300 400>,   <300 600>, <300 700>
             ;
     };
 };
