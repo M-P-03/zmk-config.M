@@ -14,7 +14,7 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <10>; // 5 Spalten links + 5 Spalten rechts
+        columns = <10>; // 5 Spalten links + 5 Spalten rechts [cite: 6]
         rows = <4>;
         map = <
         // Linke Seite                // Rechte Seite (mit Offset)
@@ -28,21 +28,21 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
-        diode-direction = "col2row"; // Prüfe, ob deine Dioden zur Zeile zeigen
+        diode-direction = "col2row"; // Prüfe, ob deine Dioden zur Zeile zeigen 
 
         row-gpios
-            = <&pro_micro  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 0 (D4)
-            , <&pro_micro  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1 (C6)
-            , <&pro_micro  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2 (D7)
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3 (E6)
+            = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 0 (D4) 
+            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1 (C6) 
+            , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2 (D7) 
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3 (E6) [cite: 11]
             ;
 
         col-gpios
-            = <&pro_micro 16 GPIO_ACTIVE_HIGH> // Col 0 (B1)
-            , <&pro_micro 17 GPIO_ACTIVE_HIGH> // Col 1 (F7)
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH> // Col 2 (F6)
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH> // Col 3 (F5)
-            , <&pro_micro 20 GPIO_ACTIVE_HIGH> // Col 4 (F4)
+            = <&pro_micro 16 GPIO_ACTIVE_HIGH> // Col 0 (B1) [cite: 12]
+            , <&pro_micro 17 GPIO_ACTIVE_HIGH> // Col 1 (F7) [cite: 12]
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH> // Col 2 (F6) [cite: 12]
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH> // Col 3 (F5) [cite: 12]
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH> // Col 4 (F4) [cite: 12]
             ;
     };
 };
